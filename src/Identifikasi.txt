@@ -1,8 +1,9 @@
 class   : Mahasiswa
-atribut : jumlah_mahasiswa, nama_mahasiswa, nim, jumlahPutaran, jumlah_waktu
-behavior: setNama, setNim, setJumlahPutaran, setJumlah_waktu
-objek	: mahasiswa1, mahasiswa2, mahasiswa3,..
+atribut : jumlah_mahasiswa, nama_mahasiswa, nim, jumlahPutaran, jumlah_waktu, jarak, waktuTercepat
+method  : constructor mahasiswa, hitungJarak, hitungWaktuTercepat, getPemenang, displayData
+objek	: mahasiswa 1, mahasiswa 2, mahasiswa 3,..
 
 class   : Lapangan
 atribut : panjang_lapangan, lebar_lapangan
-behavior: kelilingLapangan
+method  : setPanjang, setLebar, getKeliling
+objek   : lapangan lomba lari, lapangan bola

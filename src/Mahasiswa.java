@@ -5,7 +5,6 @@ public class Mahasiswa{
     private double[] jumlahPutaran = new double[1000];
     private double[] jumlahWaktu = new double[1000];
     private double[] jarak = new double[1000];
-	/*private double[] kecepatan = new double[1000];*/
     private double[] waktuTercepat = new double[1000];
     private double cekWaktu;
     
@@ -15,22 +14,17 @@ public class Mahasiswa{
         jumlahPutaran = putaran;
         jumlahWaktu = waktu;
     }
-    public void Jarak(){
+    public void hitungJarak(){
         for(int i=0; i<nim.length; i++){
             jarak[i] = Lapangan.getKeliling()*jumlahPutaran[i];
         }
     }
-	/*public void kecepatan(){
-		for(int i=0; i<nim.length; i++){
-            kecepatan[i] = jarak[i]/jumlahWaktu[i];
-        }
-	}*/
-    public void waktuTercepat(){
+    public void hitungWaktuTercepat(){
         for(int i=0; i<nim.length; i++){
             waktuTercepat[i] = jumlahWaktu[i]/jumlahPutaran[i];
         }
     }
-    public String pemenang(){
+    public String getPemenang(){
         cekWaktu = waktuTercepat[0];
 		String cek = "";
         for(int i=0; i<nim.length; i++){
@@ -48,7 +42,7 @@ public class Mahasiswa{
             System.out.println("nama             : "+nama_mahasiswa[i]);
             System.out.println("jarak            : "+jarak[i]+" m");
         }
-        System.out.println("pemenang         : "+pemenang()+" "+cekWaktu+" menit/putaran");
+        System.out.println("pemenang         : "+getPemenang()+" "+cekWaktu+" menit/putaran");
     }
 	
 }

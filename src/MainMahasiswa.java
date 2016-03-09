@@ -27,9 +27,8 @@ public class MainMahasiswa{
             in.nextLine();	
 	}
 	Mahasiswa mhs = new Mahasiswa(nama, nim, jumlahputaran, jumlahwaktu);
-        mhs.Jarak();
-        /*mhs.kecepatan();*/
-        mhs.waktuTercepat();
+        mhs.hitungJarak();
+        mhs.hitungWaktuTercepat();
         System.out.println("\noutput ");
         mhs.displayData();
     }
