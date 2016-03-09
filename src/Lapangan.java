@@ -1,3 +1,10 @@
+/*identifikasi
+class   : Lapangan
+atribut : panjang_lapangan, lebar_lapangan
+method  : setPanjang, setLebar, getKeliling
+objek   : lapangan lomba lari, lapangan bola
+*/
+
 public class Lapangan{
 	private static int panjang_lapangan;
 	private static int lebar_lapangan;

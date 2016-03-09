@@ -1,3 +1,10 @@
+/*identifikasi
+class   : Mahasiswa
+atribut : jumlah_mahasiswa, nama_mahasiswa, nim, jumlahPutaran, jumlah_waktu, jarak, waktuTercepat
+method  : constructor mahasiswa, hitungJarak, hitungWaktuTercepat, getPemenang, displayData
+objek   : mahasiswa 1, mahasiswa 2, mahasiswa 3,..
+*/
+
 public class Mahasiswa{
     private int jumlah_mahasiswa;       
     private String[] nama_mahasiswa = new String[1000];
