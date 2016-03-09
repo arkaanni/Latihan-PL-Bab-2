@@ -5,39 +5,59 @@ public class Mahasiswa{
 	private int[] jumlahPutaran = new int[1000];
 	private int[] jumlahWaktu = new int[1000];
     private final int[] jarak = new int[1000];
-	private final int[] kecepatan = new int[1000];
+    private final int[] kecepatan = new int[1000];
+	private int cekWaktu;
+	private int cekKecepatan;
 	
-	public void setJumlahMahasiswa(int jumlahmhs){
-		jumlah_mahasiswa = jumlahmhs;
-	}
-	public void setNama(String[] nama){
+	public Mahasiswa(String[] nama, long[] nim, int[] putaran, int[] waktu){
         nama_mahasiswa = nama;
-	}
-	public void setNim(long[] nim){
         this.nim = nim;
-	}
-	public void setJumlahPutaran(int[] putaran){
         jumlahPutaran = putaran;
-	}
-	public void setJumlahWaktu(int[] waktu){
-        jumlahWaktu = waktu;
+		jumlahWaktu = waktu;
 	}
 	public void Jarak(){
-        for(int i=0; i<nim.length; i++){
-            jarak[i] = Lapangan.getKeliling()*jumlahPutaran[i];
-        }
-	}
-    public void Kecepatan(){
-        for(int i=0; i<nim.length; i++){
-			kecepatan[i] = jarak[i]/jumlahWaktu[i];
-		}
-	}
-	public void displayData(){
 		for(int i=0; i<nim.length; i++){
-			System.out.println("nama            : "+nama_mahasiswa[i]);
-            System.out.println("jarak           : "+jarak[i]);
-            System.out.println("kecepatan       : "+kecepatan[i]);
+			jarak[i] = Lapangan.getKeliling()*jumlahPutaran[i];
 		}
 	}
-		
+	public void Kecepatan(){
+		for(int i=0; i<nim.length; i++){
+                kecepatan[i] = jarak[i]/(jumlahWaktu[i]*60);
+			}
+	}
+	public String waktuTercepat(){
+		cekWaktu = jumlahWaktu[0];
+		String cek = "";
+        for(int i=0; i<nim.length; i++){
+			if(jumlahWaktu[i]<cekWaktu){
+				cekWaktu = jumlahWaktu[i];
+                if(jumlahWaktu[i]==cekWaktu){
+					cek = nama_mahasiswa[i]; 
+				}
+            }
+		}
+		return cek;
+	}
+	public String pemenang(){
+		cekKecepatan = kecepatan[0];
+        String cek = "";
+        for(int i=0; i<nim.length; i++){
+			if(kecepatan[i]>cekKecepatan){
+                cekKecepatan = kecepatan[i];
+                if(kecepatan[i]==cekKecepatan){
+					cek = nama_mahasiswa[i];
+                }
+            }
+        }
+        return cek;
+    }
+	public void displayData(){
+        for(int i=0; i<nim.length; i++){
+			System.out.println("nama             : "+nama_mahasiswa[i]);
+            System.out.println("jarak            : "+jarak[i]+" m");
+        }
+        System.out.println("waktu tercepat   : "+waktuTercepat()+" "+cekWaktu+" menit");
+		System.out.println("pemenang         : "+pemenang()+" "+cekKecepatan+" m/s");
+	}
+	
 }

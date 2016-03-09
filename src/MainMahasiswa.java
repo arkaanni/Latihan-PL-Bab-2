@@ -2,38 +2,34 @@ import java.util.Scanner;
 	
 public class MainMahasiswa{
     public static void main(String[] args){
-		Scanner in = new Scanner(System.in);
-		System.out.print("jumlah mahasiswa : ");
-		int jm = in.nextInt();
-		System.out.print("panjang lapangan : ");
-		Lapangan.setPanjang(in.nextInt());
-		System.out.print("lebar lapangan   : ");
-		Lapangan.setLebar(in.nextInt());
-		Mahasiswa mhs = new Mahasiswa();
-		in.nextLine();
-    	String[] nama = new String[jm];
-		long[] nim = new long[jm];
+    	Scanner in = new Scanner(System.in);
+	System.out.print("jumlah mahasiswa     : ");
+	int jm = in.nextInt();
+	System.out.print("panjang lapangan (m) : ");
+	Lapangan.setPanjang(in.nextInt());
+	System.out.print("lebar lapangan (m)   : ");
+	Lapangan.setLebar(in.nextInt());
+	in.nextLine();
+        String[] nama = new String[jm];
+        long[] nim = new long[jm];
         int[] jumlahputaran = new int[jm], jumlahwaktu = new int[jm];
-		System.out.println("input ");
-		for(int i=0; i<jm; i++){
+	System.out.println("\ninput ");
+	for(int i=0; i<jm; i++){
             System.out.print("nim              : ");
             nim[i] = in.nextLong();
-            mhs.setNim(nim);
-			in.nextLine();
+            in.nextLine();
             System.out.print("nama mahasiswa   : ");
             nama[i] = in.nextLine();
-            mhs.setNama(nama);
             System.out.print("jumlah putaran   : ");
             jumlahputaran[i] = in.nextInt();
-            mhs.setJumlahPutaran(jumlahputaran);
-            System.out.print("jumlah waktu     : ");
+            System.out.print("jumlah waktu (m) : ");
             jumlahwaktu[i] = in.nextInt();
-            mhs.setJumlahWaktu(jumlahwaktu);
             in.nextLine();	
-		}
-		mhs.Jarak();
+	}
+	Mahasiswa mhs = new Mahasiswa(nama, nim, jumlahputaran, jumlahwaktu);
+        mhs.Jarak();
         mhs.Kecepatan();
-        System.out.println("output ");
+        System.out.println("\noutput ");
         mhs.displayData();
     }
 }
