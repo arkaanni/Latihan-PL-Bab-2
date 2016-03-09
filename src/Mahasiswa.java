@@ -23,10 +23,14 @@ public class Mahasiswa{
 	public int getJarak(){
 		return Lapangan.getKeliling()*jumlahPutaran;
 	}
+	public int getKecepatan(){
+		return getJarak()/jumlahWaktu;
+	}
 	public void displayData(){
 		System.out.println("output ");
 		System.out.println("nama            : "+nama_mahasiswa);
 		System.out.println("jarak           : "+getJarak());
+		System.out.println("kecepatan       : "+getKecepatan());
 	}
 		
 }

@@ -24,7 +24,9 @@ public class MainMahasiswa{
 			System.out.print("jumlah waktu     : ");
 			mhs[i].setJumlahWaktu(in.nextInt());
 			in.nextLine();
-			mhs[i].displayData();
+		}
+		for(int j=0; j<jm; j++){
+			mhs[j].displayData();
 		}
 	}
 }
