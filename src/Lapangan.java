@@ -8,7 +8,7 @@ public class Lapangan{
 	public void setLebar(double lebar){
 		lebar_lapangan = lebar;
 	}
-	public double getKeliling(){
+	public static double getKeliling(){
 		return 2*(panjang_lapangan+lebar_lapangan);
 	}
 }

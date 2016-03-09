@@ -1,6 +1,7 @@
 class   : Mahasiswa
 atribut : jumlah_mahasiswa, nama_mahasiswa, nim, jumlahPutaran, jumlah_waktu
 behavior: setNama, setNim, setJumlahPutaran, setJumlah_waktu
+objek	: mahasiswa1, mahasiswa2, mahasiswa3,..
 
 class   : Lapangan
 atribut : panjang_lapangan, lebar_lapangan
