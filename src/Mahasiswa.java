@@ -5,6 +5,9 @@ public class Mahasiswa{
 	private int jumlahPutaran;
 	private int jumlahWaktu;
 	
+	public void setJumlahMahasiswa(int jumlahmhs){
+		jumlah_mahasiswa = jumlahmhs;
+	}
 	public void setNama(String nama){
 		nama_mahasiswa = nama;
 	}
@@ -16,5 +19,8 @@ public class Mahasiswa{
 	}
 	public void setJumlahWaktu(int waktu){
 		jumlahWaktu = waktu;
+	}
+	public double getJarak(){
+		return Lapangan.getKeliling()*jumlahPutaran;
 	}
 }
