@@ -20,7 +20,13 @@ public class Mahasiswa{
 	public void setJumlahWaktu(int waktu){
 		jumlahWaktu = waktu;
 	}
-	public double getJarak(){
+	public int getJarak(){
 		return Lapangan.getKeliling()*jumlahPutaran;
 	}
+	public void displayData(){
+		System.out.println("output ");
+		System.out.println("nama            : "+nama_mahasiswa);
+		System.out.println("jarak           : "+getJarak());
+	}
+		
 }
