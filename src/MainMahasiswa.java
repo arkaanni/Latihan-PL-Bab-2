@@ -1,7 +1,7 @@
 import java.util.Scanner;
 	
 public class MainMahasiswa{
-	public static void main(String[] args){
+    public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
 		System.out.print("jumlah mahasiswa : ");
 		int jm = in.nextInt();
@@ -9,24 +9,31 @@ public class MainMahasiswa{
 		Lapangan.setPanjang(in.nextInt());
 		System.out.print("lebar lapangan   : ");
 		Lapangan.setLebar(in.nextInt());
-		Mahasiswa[] mhs = new Mahasiswa[jm];
+		Mahasiswa mhs = new Mahasiswa();
 		in.nextLine();
+    	String[] nama = new String[jm];
+		long[] nim = new long[jm];
+        int[] jumlahputaran = new int[jm], jumlahwaktu = new int[jm];
 		System.out.println("input ");
 		for(int i=0; i<jm; i++){
-			mhs[i] = new Mahasiswa();
-			System.out.print("nim              : ");
-			mhs[i].setNim(in.nextLong());
+            System.out.print("nim              : ");
+            nim[i] = in.nextLong();
+            mhs.setNim(nim);
 			in.nextLine();
-			System.out.print("nama mahasiswa   : ");
-			mhs[i].setNama(in.nextLine());
-			System.out.print("jumlah putaran   : ");
-			mhs[i].setJumlahPutaran(in.nextInt());
-			System.out.print("jumlah waktu     : ");
-			mhs[i].setJumlahWaktu(in.nextInt());
-			in.nextLine();
+            System.out.print("nama mahasiswa   : ");
+            nama[i] = in.nextLine();
+            mhs.setNama(nama);
+            System.out.print("jumlah putaran   : ");
+            jumlahputaran[i] = in.nextInt();
+            mhs.setJumlahPutaran(jumlahputaran);
+            System.out.print("jumlah waktu     : ");
+            jumlahwaktu[i] = in.nextInt();
+            mhs.setJumlahWaktu(jumlahwaktu);
+            in.nextLine();	
 		}
-		for(int j=0; j<jm; j++){
-			mhs[j].displayData();
-		}
-	}
+		mhs.Jarak();
+        mhs.Kecepatan();
+        System.out.println("output ");
+        mhs.displayData();
+    }
 }
